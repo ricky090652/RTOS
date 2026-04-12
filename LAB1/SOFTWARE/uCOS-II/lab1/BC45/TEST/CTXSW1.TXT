@@ -5,6 +5,7 @@
     5 Complete 2   3
     6 Preempt  3   1
     7 Complete 1   2
+    9 Task3 EXCEED DEADLINE!
     9 Preempt  2   1
    10 Complete 1   2
    11 Complete 2   3
@@ -13,6 +14,7 @@
    15 Preempt  2   1
    16 Complete 1   2
    17 Complete 2   3
+   18 Task3 EXCEED DEADLINE!
    18 Preempt  3   1
    19 Complete 1   2
    21 Preempt  2   1
@@ -23,13 +25,13 @@
    27 Preempt  2   1
    28 Complete 1   2
    29 Complete 2   3
-time:9 task3 exceed deadline
    29 Complete 3   12
    30 Preempt  12   1
    31 Complete 1   2
    33 Preempt  2   1
    34 Complete 1   2
    35 Complete 2   12
+   36 Task3 EXCEED DEADLINE!
    36 Preempt  12   1
    37 Complete 1   2
    39 Preempt  2   1
@@ -37,6 +39,7 @@ time:9 task3 exceed deadline
    41 Complete 2   12
    42 Preempt  12   1
    43 Complete 1   2
+   45 Task3 EXCEED DEADLINE!
    45 Preempt  2   1
    46 Complete 1   2
    47 Complete 2   12
@@ -45,6 +48,7 @@ time:9 task3 exceed deadline
    51 Preempt  2   1
    52 Complete 1   2
    53 Complete 2   12
+   54 Task3 EXCEED DEADLINE!
    54 Preempt  12   1
    55 Complete 1   2
    57 Preempt  2   1
@@ -52,6 +56,7 @@ time:9 task3 exceed deadline
    59 Complete 2   12
    60 Preempt  12   1
    61 Complete 1   2
+   63 Task3 EXCEED DEADLINE!
    63 Preempt  2   1
    64 Complete 1   2
    65 Complete 2   12
@@ -60,6 +65,7 @@ time:9 task3 exceed deadline
    69 Preempt  2   1
    70 Complete 1   2
    71 Complete 2   12
+   72 Task3 EXCEED DEADLINE!
    72 Preempt  12   1
    73 Complete 1   2
    75 Preempt  2   1
@@ -67,6 +73,7 @@ time:9 task3 exceed deadline
    77 Complete 2   12
    78 Preempt  12   1
    79 Complete 1   2
+   81 Task3 EXCEED DEADLINE!
    81 Preempt  2   1
    82 Complete 1   2
    83 Complete 2   12
@@ -75,6 +82,7 @@ time:9 task3 exceed deadline
    87 Preempt  2   1
    88 Complete 1   2
    89 Complete 2   12
+   90 Task3 EXCEED DEADLINE!
    90 Preempt  12   1
    91 Complete 1   2
    93 Preempt  2   1
@@ -82,6 +90,7 @@ time:9 task3 exceed deadline
    95 Complete 2   12
    96 Preempt  12   1
    97 Complete 1   2
+   99 Task3 EXCEED DEADLINE!
    99 Preempt  2   1
   100 Complete 1   2
   101 Complete 2   12
@@ -90,6 +99,7 @@ time:9 task3 exceed deadline
   105 Preempt  2   1
   106 Complete 1   2
   107 Complete 2   12
+  108 Task3 EXCEED DEADLINE!
   108 Preempt  12   1
   109 Complete 1   2
   111 Preempt  2   1
@@ -97,6 +107,7 @@ time:9 task3 exceed deadline
   113 Complete 2   12
   114 Preempt  12   1
   115 Complete 1   2
+  117 Task3 EXCEED DEADLINE!
   117 Preempt  2   1
   118 Complete 1   2
   119 Complete 2   12
@@ -105,6 +116,7 @@ time:9 task3 exceed deadline
   123 Preempt  2   1
   124 Complete 1   2
   125 Complete 2   12
+  126 Task3 EXCEED DEADLINE!
   126 Preempt  12   1
   127 Complete 1   2
   129 Preempt  2   1
@@ -112,6 +124,7 @@ time:9 task3 exceed deadline
   131 Complete 2   12
   132 Preempt  12   1
   133 Complete 1   2
+  135 Task3 EXCEED DEADLINE!
   135 Preempt  2   1
   136 Complete 1   2
   137 Complete 2   12
@@ -120,6 +133,7 @@ time:9 task3 exceed deadline
   141 Preempt  2   1
   142 Complete 1   2
   143 Complete 2   12
+  144 Task3 EXCEED DEADLINE!
   144 Preempt  12   1
   145 Complete 1   2
   147 Preempt  2   1
@@ -127,6 +141,7 @@ time:9 task3 exceed deadline
   149 Complete 2   12
   150 Preempt  12   1
   151 Complete 1   2
+  153 Task3 EXCEED DEADLINE!
   153 Preempt  2   1
   154 Complete 1   2
   155 Complete 2   12
@@ -135,6 +150,7 @@ time:9 task3 exceed deadline
   159 Preempt  2   1
   160 Complete 1   2
   161 Complete 2   12
+  162 Task3 EXCEED DEADLINE!
   162 Preempt  12   1
   163 Complete 1   2
   165 Preempt  2   1
@@ -142,6 +158,7 @@ time:9 task3 exceed deadline
   167 Complete 2   12
   168 Preempt  12   1
   169 Complete 1   2
+  171 Task3 EXCEED DEADLINE!
   171 Preempt  2   1
   172 Complete 1   2
   173 Complete 2   12
@@ -150,6 +167,7 @@ time:9 task3 exceed deadline
   177 Preempt  2   1
   178 Complete 1   2
   179 Complete 2   12
+  180 Task3 EXCEED DEADLINE!
   180 Preempt  12   1
   181 Complete 1   2
   183 Preempt  2   1
@@ -157,6 +175,7 @@ time:9 task3 exceed deadline
   185 Complete 2   12
   186 Preempt  12   1
   187 Complete 1   2
+  189 Task3 EXCEED DEADLINE!
   189 Preempt  2   1
   190 Complete 1   2
   191 Complete 2   12
@@ -165,53 +184,117 @@ time:9 task3 exceed deadline
   195 Preempt  2   1
   196 Complete 1   2
   197 Complete 2   12
+  198 Task3 EXCEED DEADLINE!
   198 Preempt  12   1
   199 Complete 1   2
   200 Preempt  2   0
-  215 Complete 0   1
-time:204 task1 exceed deadline
-  216 Complete 1   2
-time:204 task2 exceed deadline
-  218 Complete 2   11
-  218 Complete 11   12
-  415 Preempt  12   0
-  415 Complete 0   12
-  418 Preempt  12   11
-  418 Complete 11   12
-  615 Preempt  12   0
-  615 Complete 0   12
-  618 Preempt  12   11
-  618 Complete 11   12
-  815 Preempt  12   0
-  815 Complete 0   12
-  818 Preempt  12   11
-  818 Complete 11   12
- 1015 Preempt  12   0
- 1015 Complete 0   12
- 1018 Preempt  12   11
- 1018 Complete 11   12
- 1215 Preempt  12   0
- 1215 Complete 0   12
- 1218 Preempt  12   11
- 1218 Complete 11   12
- 1415 Preempt  12   0
- 1415 Complete 0   12
- 1418 Preempt  12   11
- 1418 Complete 11   12
- 1615 Preempt  12   0
- 1615 Complete 0   12
- 1618 Preempt  12   11
- 1618 Complete 11   12
- 1815 Preempt  12   0
- 1815 Complete 0   12
- 1818 Preempt  12   11
- 1818 Complete 11   12
- 2015 Preempt  12   0
- 2015 Complete 0   12
- 2018 Preempt  12   11
- 2018 Complete 11   12
- 2215 Preempt  12   0
- 2215 Complete 0   12
- 2218 Preempt  12   11
- 2218 Complete 11   12
- 2415 Preempt  12   0
+  204 Task2 EXCEED DEADLINE!
+  204 Task1 EXCEED DEADLINE!
+  207 Task3 EXCEED DEADLINE!
+  207 Task1 EXCEED DEADLINE!
+  210 Task2 EXCEED DEADLINE!
+  210 Task1 EXCEED DEADLINE!
+  213 Task1 EXCEED DEADLINE!
+  216 Task3 EXCEED DEADLINE!
+  216 Task2 EXCEED DEADLINE!
+  216 Task1 EXCEED DEADLINE!
+  219 Task1 EXCEED DEADLINE!
+  220 Complete 0   1
+  221 Complete 1   2
+  222 Task2 EXCEED DEADLINE!
+  222 Preempt  2   1
+  223 Complete 1   2
+  224 Complete 2   11
+  224 Complete 11   12
+  225 Task3 EXCEED DEADLINE!
+  225 Preempt  12   1
+  226 Complete 1   12
+  228 Preempt  12   1
+  229 Complete 1   2
+  231 Preempt  2   1
+  232 Complete 1   2
+  233 Complete 2   12
+  234 Task3 EXCEED DEADLINE!
+  234 Preempt  12   1
+  235 Complete 1   2
+  237 Preempt  2   1
+  238 Complete 1   2
+  239 Complete 2   12
+  240 Preempt  12   1
+  241 Complete 1   2
+  243 Task3 EXCEED DEADLINE!
+  243 Preempt  2   1
+  244 Complete 1   2
+  245 Complete 2   12
+  246 Preempt  12   1
+  247 Complete 1   2
+  249 Preempt  2   1
+  250 Complete 1   2
+  251 Complete 2   12
+  252 Task3 EXCEED DEADLINE!
+  252 Preempt  12   1
+  253 Complete 1   2
+  255 Preempt  2   1
+  256 Complete 1   2
+  257 Complete 2   12
+  258 Preempt  12   1
+  259 Complete 1   2
+  261 Task3 EXCEED DEADLINE!
+  261 Preempt  2   1
+  262 Complete 1   2
+  263 Complete 2   12
+  264 Preempt  12   1
+  265 Complete 1   2
+  267 Preempt  2   1
+  268 Complete 1   2
+  269 Complete 2   12
+  270 Task3 EXCEED DEADLINE!
+  270 Preempt  12   1
+  271 Complete 1   2
+  273 Preempt  2   1
+  274 Complete 1   2
+  275 Complete 2   12
+  276 Preempt  12   1
+  277 Complete 1   2
+  279 Task3 EXCEED DEADLINE!
+  279 Preempt  2   1
+  280 Complete 1   2
+  281 Complete 2   12
+  282 Preempt  12   1
+  283 Complete 1   2
+  285 Preempt  2   1
+  286 Complete 1   2
+  287 Complete 2   12
+  288 Task3 EXCEED DEADLINE!
+  288 Preempt  12   1
+  289 Complete 1   2
+  291 Preempt  2   1
+  292 Complete 1   2
+  293 Complete 2   12
+  294 Preempt  12   1
+  295 Complete 1   2
+  297 Task3 EXCEED DEADLINE!
+  297 Preempt  2   1
+  298 Complete 1   2
+  299 Complete 2   12
+  300 Preempt  12   1
+  301 Complete 1   2
+  303 Preempt  2   1
+  304 Complete 1   2
+  305 Complete 2   12
+  306 Task3 EXCEED DEADLINE!
+  306 Preempt  12   1
+  307 Complete 1   2
+  309 Preempt  2   1
+  310 Complete 1   2
+  311 Complete 2   12
+  312 Preempt  12   1
+  313 Complete 1   2
+  315 Task3 EXCEED DEADLINE!
+  315 Preempt  2   1
+  316 Complete 1   2
+  317 Complete 2   12
+  318 Preempt  12   1
+  319 Complete 1   2
+  321 Preempt  2   1
+  322 Complete 1   2

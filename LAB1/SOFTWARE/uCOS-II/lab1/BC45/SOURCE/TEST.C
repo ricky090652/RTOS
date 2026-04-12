@@ -107,13 +107,8 @@ void  TaskStart (void *pdata)
 
     TaskStartCreateTasks();                                /* Create all the application tasks         */
 	OSTimeSet(0);
-	TimeStart = 1;
+	TimeStart = 1;                                          /*確保log紀錄時間是從0開始，不會紀錄到系統開機的雜訊任務*/
 
-    //讓系統稍微跑一下，大約收集 20 幾個 Ticks 的資料就好
-    //OSTimeDly(25); 
-
-    //關閉紀錄開關，這樣 Buffer 就不會再增加了
-    //TimeStart = 0; 
 
     //PrintCtxSwMessage_DOS();
     for (;;) {
@@ -272,42 +267,39 @@ static  void  TaskStartCreateTasks (void)
 //        OSTimeDly(1);                            /* Delay 1 clock tick                                 */
 //    }
 //}
-
 void Task (void *pdata)
 {
-    int start;   // start time
-    int end;     // end time
     int toDelay; 
     struct period *tmpPdata = (struct period*) pdata;
     int c = tmpPdata->exeTime;
 
     OS_ENTER_CRITICAL();
-    OSTCBCur->compTime=c;                         // set the counter (c ticks for computation)
-    OSTCBCur->period=tmpPdata->period;               // set the period
+    OSTCBCur->compTime = c;
+    OSTCBCur->period = tmpPdata->period;
+    OSTCBCur->start = 0;      
+    OSTCBCur->end = 0;
     OS_EXIT_CRITICAL();
 
-    start = 0;
     while(1)
     {
-        while(OSTCBCur->compTime > 0)             // C ticks
+        while(OSTCBCur->compTime > 0)
         {
-            // do nothing
+            // busywaiting
         }
-        end = OSTimeGet();
-        if (end > start+OSTCBCur->period){
-            //printf("time:%d task%d exceed deadline\n", start+OSTCBCur->period, OSTCBCur->OSTCBPrio);
-            sprintf(CtxSwMessage[CtxSwMessageTop++], 
-                        "time:%d task%d exceed deadline\n", 
-                        start + (int)OSTCBCur->period, 
-                        (int)OSTCBCur->OSTCBPrio);
-        }
-        toDelay = (OSTCBCur->period) - (end-start);
-        start = start + (OSTCBCur->period);
         
+        OSTCBCur->end = (INT32U)OSTimeGet();
+        
+        // calculate delay time
+        toDelay = (OSTCBCur->period) - (OSTCBCur->end - OSTCBCur->start);
+        
+        // prepare next period start time
+        OSTCBCur->start = OSTCBCur->start + OSTCBCur->period; 
+
         OS_ENTER_CRITICAL();
-        OSTCBCur->compTime=c;                     // reset the counter (c ticks for computation)
+        OSTCBCur->compTime = c; // reset compTime
         OS_EXIT_CRITICAL();
-        OSTimeDly (toDelay);                      // delay and wait (P-C) times
+        
+        OSTimeDly (toDelay);
     }
 }
 
@@ -338,17 +330,14 @@ void PrintCtxSwMessage_DOS() {
 
 void SaveCtxSwMessage_ToFile() {
     FILE *fp;
-    static int i = 0; // 用於追蹤已寫入的訊息索引
-    // 如果沒有新訊息則直接返回
+    static int i = 0; 
     if (i >= CtxSwMessageTop) {
         return;
     }
-    // 以附加模式 (Append) 打開檔案
     fp = fopen("CTXSW1.TXT", "a");
     if (fp == NULL) {
-        return; // 開檔失敗處理
+        return; 
     }
-    // 寫入從上次進度之後的所有新訊息
     for (; i < CtxSwMessageTop; i++) {
         fprintf(fp, "%s", CtxSwMessage[i]);
     }

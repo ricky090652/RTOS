@@ -386,6 +386,16 @@ void  OSTimeTick (void)
         ptcb = OSTCBList;                                  /* Point at first TCB in TCB list           */
         while (ptcb->OSTCBPrio != OS_IDLE_PRIO) {          /* Go through all TCBs in TCB list          */
             OS_ENTER_CRITICAL();
+            if (ptcb->period > 0 && OSTime == (ptcb->start + ptcb->period) && ptcb->compTime > 0) {
+                if (CtxSwMessageTop < CtxSwMessageSize) {
+                    sprintf(CtxSwMessage[CtxSwMessageTop++], 
+                            "%5ld Task%d EXCEED DEADLINE!\n", 
+                            OSTime, (int)ptcb->OSTCBPrio);
+                }
+                // 超時後自動將基準點移往下一週期，確保下次還能偵測
+                ptcb->start += ptcb->period;
+            }
+
             if (ptcb->OSTCBDly != 0) {                     /* Delayed or waiting for event with TO     */
                 if (--ptcb->OSTCBDly == 0) {               /* Decrement nbr of ticks to end of delay   */
                     if ((ptcb->OSTCBStat & OS_STAT_SUSPEND) == OS_STAT_RDY) { /* Is task suspended?    */
@@ -1065,6 +1075,10 @@ INT8U  OS_TCBInit (INT8U prio, OS_STK *ptos, OS_STK *pbos, INT16U id, INT32U stk
         ptcb->OSTCBExtPtr    = pext;                       /* Store pointer to TCB extension           */
         ptcb->OSTCBStkSize   = stk_size;                   /* Store stack size                         */
         ptcb->OSTCBStkBottom = pbos;                       /* Store pointer to bottom of stack         */
+        ptcb->compTime       = 0;                          /* Initialize computation and period fields */
+        ptcb->period         = 0;
+        ptcb->start          = 0;
+        ptcb->end            = 0;
         ptcb->OSTCBOpt       = opt;                        /* Store task options                       */
         ptcb->OSTCBId        = id;                         /* Store task ID                            */
 #else

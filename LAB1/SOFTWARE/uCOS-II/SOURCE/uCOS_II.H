@@ -406,6 +406,8 @@ typedef struct os_tcb {
     INT8U          OSTCBBitY;          /* Bit mask to access bit position in ready group               */
     INT16U         compTime;
     INT16U         period;
+    INT32U         start;
+    INT32U         end;
 
 #if OS_TASK_DEL_EN > 0
     BOOLEAN        OSTCBDelReq;        /* Indicates whether a task needs to delete itself              */
