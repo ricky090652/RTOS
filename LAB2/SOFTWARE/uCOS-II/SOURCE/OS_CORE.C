@@ -1140,17 +1140,19 @@ INT8U  OS_TCBInit (INT8U prio, OS_STK *ptos, OS_STK *pbos, INT16U id, INT32U stk
 
 static  void  OS_SchedEDF(void){
     OS_TCB *ptcb = OSTCBList;
-    INT32U min_deadline = 0xFFFFFFFF; // 初始設為最大值
-    INT8U best_prio = OS_IDLE_PRIO;   // 預設為 Idle Task
+    INT32U min_deadline = 0xFFFFFFFF; 
+    INT8U  best_prio = OS_IDLE_PRIO;
     while (ptcb != (OS_TCB *)0) {
         if (ptcb->OSTCBStat == OS_STAT_RDY && ptcb->OSTCBDly == 0){
-            if(ptcb->deadline < min_deadline){
+            if (ptcb->deadline < min_deadline) {
                 min_deadline = ptcb->deadline;
                 best_prio = ptcb->OSTCBPrio;
             }
             else if (ptcb->deadline == min_deadline) {
-                // 【平手處理】如果 Deadline 一樣，選靜態優先權高的 (數字小的)
-                if (ptcb->OSTCBPrio < best_prio) {
+                if (ptcb == OSTCBCur && ptcb->OSTCBPrio != OS_IDLE_PRIO) {
+                    best_prio = ptcb->OSTCBPrio;
+                }
+                else if (best_prio == OS_IDLE_PRIO || (ptcb->OSTCBPrio < best_prio && best_prio != OSTCBCur->OSTCBPrio)) {
                     best_prio = ptcb->OSTCBPrio;
                 }
             }
