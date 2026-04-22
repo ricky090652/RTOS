@@ -294,12 +294,12 @@ void Task (void *pdata)
         
         // prepare next period start time
         OSTCBCur->start = OSTCBCur->start + OSTCBCur->period; 
+        
+        OSTimeDly (toDelay);
 
         OS_ENTER_CRITICAL();
         OSTCBCur->compTime = c; // reset compTime
         OS_EXIT_CRITICAL();
-        
-        OSTimeDly (toDelay);
     }
 }
 

@@ -19,7 +19,7 @@
 */
 
 #define  TASK_STK_SIZE                 512       /* Size of each task's stacks (# of WORDs)            */
-#define  N_TASKS                        2        /* Number of identical tasks                          */
+#define  N_TASKS                        3        /* Number of identical tasks                          */
 
 /*
 *********************************************************************************************************
@@ -226,11 +226,11 @@ static  void  TaskStartCreateTasks (void)
     INT8U  err;
 
     TaskData[0].exeTime = 1;
-    TaskData[0].period = 3;
-    TaskData[1].exeTime = 3;
+    TaskData[0].period = 4;
+    TaskData[1].exeTime = 2;
     TaskData[1].period = 5;
-    // TaskData[2].exeTime = 4;
-    // TaskData[2].period = 9;
+    TaskData[2].exeTime = 2;
+    TaskData[2].period = 10;
 
     //for (i = 0; i < N_TASKS; i++) {                        /* Create N_TASKS identical tasks           */
     //    TaskData[i] = '0' + i;                             /* Each task will display its own letter    */

@@ -392,8 +392,6 @@ void  OSTimeTick (void)
                             "%5ld Task%d EXCEED DEADLINE!\n", 
                             OSTime, (int)ptcb->OSTCBPrio);
                 }
-                // 超時後自動將基準點移往下一週期，確保下次還能偵測
-                ptcb->start += ptcb->period;
             }
 
             if (ptcb->OSTCBDly != 0) {                     /* Delayed or waiting for event with TO     */
